@@ -13,7 +13,7 @@ Berikut adalah goals yang ingin dicapai dalam proyek ini:
 *	Mengetahui hal yang mempengaruhi asuransi perjalanan seseorang individu
 *	Mengetahui model terbaik dalam Machine Learning untuk memprediksi asuransi perjalanan seseorang.
 ### Solution Statements
-Solusi yang diajukan antara lain adalah Decision Tree, Support Vector Machine dan Random Forest. Dengan pengertian:
+Untuk mencapai tujuan memprediksi asuransi perjalanan ini saya menggunakan tiga model Machine Learning. Dimana ketiga model ini cocok digunakan untuk data regresi karena output yang diprediksi adalah sebuah angka. Berikut penjelasan secara singkat mengenai tiga model yang saya gunakan:
 *	**Decision Trees (DTs**
 </br>[Decision Trees (DTs)](https://scikit-learn.org/stable/modules/tree.html) adalah metode pembelajaran terawasi non-parametrik yang digunakan untuk klasifikasi dan regresi. Tujuannya adalah untuk membuat model yang memprediksi nilai variabel target dengan mempelajari aturan keputusan sederhana yang disimpulkan dari fitur data. Sebuah pohon dapat dilihat sebagai pendekatan konstan sepotong demi sepotong.
 *	**Support Vector Machine**
@@ -154,16 +154,15 @@ Pada tahap evaluation akan dijelaskan mengenai metrik yang digunakan dalam predi
 ![mseformula](https://github.com/SangtuYoga/ML-T/blob/main/mse.png?raw=true)
 
 Keterangan: 
+* accuracy = Nilai akurasi
 * MSE = Nilai mean square error
 * n = jumlah data sampel
 * i = urutan data
 * Y = Nilai hasil observasi
 * Ŷ = Nilai hasil prediksi
 
-Hasil dari evaluation model pada proyek ini mengenai prediksi biaya asuransi dapat dilihat pada gambar di bawah ini. 
+Hasil dari evaluation model pada proyek ini mengenai prediksi asuransi perjalanan dapat dilihat pada gambar di bawah ini. 
 
-![matrikmse](https://github.com/SangtuYoga/ML-T/blob/main/msematrik.png?raw=true)
-![akurasimodel](https://github.com/SangtuYoga/ML-T/blob/main/akurasimodel.png?raw=true)
+![Evaluasimatrik](https://github.com/SangtuYoga/ML-T/blob/main/evaluasi.png?raw=true)
 
-
-Jadi dapat disimpulkan bahwa model yang memiliki akurasi tertinggi dan MSE yang rendah dalam memprediksi asuransi perjalanan adalah menggunakan model Decision Tree Classifier dengan akurasi tertinggi yakni 80% dengan mse yang paling rendah diantara model lainnya.
+Jadi dapat disimpulkan bahwa model yang memiliki akurasi tertinggi dan MSE yang rendah dalam memprediksi asuransi perjalanan adalah menggunakan model Decision Tree dengan akurasi tertinggi yakni 80% dengan mse yang paling rendah diantara model lainnya. Maka untuk prediksi yang lebih akurat menggunakan model Decision Tree.
