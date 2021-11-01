@@ -109,14 +109,17 @@ Dari kedua gambar tersebut dapat disimpulkan bahwa model pertama adalah model ya
 
 Dalam proses evaluasi, akan disajikan informasi mengenai perbandingan mengenai model pertama dan kedua melalui dua metrik berikut:
 
-###Loss (Mean Squared Error Loss)
+### Loss (Mean Squared Error Loss)
+
 Mean Squared Erorr Loss berfungsi untuk menghitung rata-rata kuadrat kesalahan antara label dan prediksi. Dengan demikian semakin rendahnya nilai loss (mean squared error loss) maka semakin baik dan akurat model yang dibuat. Berikut adalah hasil perbandingan loss dan val_loss pada kedua model yang telah dibuat.
 
 ![loss](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/metrikloss.png?raw=true) 
 ![valloss](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/metrikvalloss.png?raw=true) 
 
-###RMSE (Root Mean Squared Error)
+### RMSE (Root Mean Squared Error)
+
 Root Mean Squared Error adalah matrik yang berfungsi untuk menghitung kuadrat dari rata-rata selisih kuadrat antara nilai taksiran dan nilai sebenarnya dari variabel/fitur. Dengan demikian semakin rendahnya nilai RMSE makan semakin baik model tersebut dalam melakukan prediksi. Berikut formula/rumus dari root mean squared error.
+
 ![formularmse](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/rmse.png?raw=true) 
 
 Berikut adalah hasil perbandingan root_mean_squared_error dan val_root_mean_squared_error pada kedua model yang telah dibuat.
