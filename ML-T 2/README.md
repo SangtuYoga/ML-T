@@ -97,11 +97,11 @@ Dari hasil diatas dapat disimpulkan bahwa terdapat 10 anime dengan kesamaan genr
 Selanjutnya merupakan hasil dari modelling *deep learning* untuk sistem rekomendasi berbasis *collaborative filtering*. Dimana model ini akan memberikan rekomendasi anime untuk seorang pengguna berdasarkan idnya. Disini saya membuat 2 model untuk collaborative filltering yang akan digunakan sebagai pembanding model manakah yang terbaik untuk melakukan rekomendasi terhadap seorang user.
 - Hasil Model 1
 
-![collaborative filtering 1](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/model1cf.png?raw=true)    
+![collaborative filtering 1](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/model1.png?raw=true)    
 
 - Hasil Model 2
 
-![collaborative filtering 2](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/model2cf.png?raw=true)   
+![collaborative filtering 2](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/model2.png?raw=true)   
     
 Dari kedua gambar tersebut dapat disimpulkan bahwa model pertama adalah model yang terbaik dikarenakan rating prediksinya terhadap sebuah anime lebih tinggi dibandingkan model kedua. 
 
