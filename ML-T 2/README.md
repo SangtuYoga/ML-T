@@ -18,7 +18,7 @@ Dimana Content-Based Filtering berguna untuk merekomendasikan anime berdasarkan 
 
 ## Data Understanding
 ![banner](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/bannerdataset.png?raw=true)
-Dataset ini didapat dari [kaggle](https://www.kaggle.com/).  Untuk projek ini, saya mengambil data yang bernama [Anime Recommendations Database vol.2](https://www.kaggle.com/noiruuuu/anime-recommendations-database-vol2). Berikut adalah keterangan mengenai maksud dari variabel - variabel atau kolom tersebut :
+Dataset ini didapat dari [kaggle](https://www.kaggle.com/).  Untuk projek ini, saya mengambil data yang bernama [Anime Recommendations Database vol.2](https://www.kaggle.com/noiruuuu/anime-recommendations-database-vol2). Pada dataset yang digunakan terdapat beberapa file csv diantaranya adalah animes.csv danratings.csv. Berikut adalah keterangan mengenai maksud dari variabel - variabel atau kolom pada file csv tersebut :
 
 - animes.csv
     - anime_id - ID unik myanimelist.net yang mengidentifikasi anime.
@@ -35,6 +35,25 @@ Dataset ini didapat dari [kaggle](https://www.kaggle.com/).  Untuk projek ini, s
     - user_id - ID pengguna yang dihasilkan secara acak tidak dapat diidentifikasi.
     - anime_id - anime yang telah dinilai oleh pengguna ini.
     - peringkat - peringkat dari 10 yang telah ditetapkan pengguna ini (0 jika pengguna menontonnya tetapi tidak memberikan peringkat).
+
+Dan apabila dilakukan data loading hasilnya seperti berikut.
+- animes
+ 
+    ![dlanime](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/dlanime.png?raw=true)
+
+- rating
+
+    ![dlrating](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/dlrating.png?raw=true)
+    
+    pada data rating dapat dilihat deskripsi statistiknya seperti berikut:
+    
+    ![ratingdesc](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/ratingdesc.png?raw=true)
+    
+Berikut merupakan karakteristik data dari dataset tersebut :
+
+![karakteristik](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/karakteristik.png?raw=true)
+
+Dari data diatas dapat disimpulkan bahwa pada data anime sebanyak terdapat index sebanyak 15221 dan 7 kolom dan pada data rating terdapat index sebanyak 11039694 dan 3 kolom. Untuk yang bertanya kenapa pada info data anime tidak terdapat kolom start_date, season dan sumber, karena saya telah melakukan dropping terhadap kolom tersebut karena menurut saya kolom tersebut dalam proyek ini tidak digunakan untuk melakukan sistem rekomendasi.
 
 Dalam proses data understanding, saya melakukan visualisasi data terhadap tipe dari media streaming dan genre yang paling sering terdapat/muncul dalam sebuah anime. Berikut adalah visualisasi dari data media streaming seluruh anime pada animes.csv:
 
@@ -89,9 +108,15 @@ Dalam data preparation, ada beberapa teknik yang saya gunakan untuk proses *prep
 ### Cosine Similatiry
 Berikut merupakan hasil dari modelling menggunakan *Cosine Simirality* untuk sistem rekomendasi berbasis *content-based filtering*. 
 
+Mengecek informasi genre mengenai anime "One Piece"
+
+![content-based filtering](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/animecek.png?raw=true)  
+
+Dari gambar di atas dapat dilihat detail dari anime "One Piece" bahwa memliki genre Action, Adventure, Comedy, Super Power, Drama, Fantasi. Berikut merupakan 10 anime yang direkomendasikan berdasarkan genre dengan model cosine similatiry.
+
 ![content-based filtering](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/cbs.png?raw=true)    
 
-Dari hasil diatas dapat disimpulkan bahwa terdapat 10 anime dengan kesamaan genre yang tinggi dengan anime "One Piece"
+Dari hasil diatas dapat disimpulkan bahwa terdapat 10 anime dengan kesamaan genre yang tinggi dengan anime "One Piece" dan seluruh anime yang direkomendasikan memiliki genre yang relevan dengan "One Piece"
 
 ### Deep Learning
 Selanjutnya merupakan hasil dari modelling *deep learning* untuk sistem rekomendasi berbasis *collaborative filtering*. Dimana model ini akan memberikan rekomendasi anime untuk seorang pengguna berdasarkan idnya. Disini saya membuat 2 model untuk collaborative filltering yang akan digunakan sebagai pembanding model manakah yang terbaik untuk melakukan rekomendasi terhadap seorang user.
@@ -126,5 +151,13 @@ Berikut adalah hasil perbandingan root_mean_squared_error dan val_root_mean_squa
 
 ![loss](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/metrikrmse.png?raw=true) 
 ![loss](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/metrikvalrmse.png?raw=true) 
+
+### Precision
+
+ Precision adalah rasio prediksi data benar positif dibandingkan dengan keseluruhan hasil yang diprediksi positf. Disini karena kita tidak bisa menghitung dengan memanggil library scikit learn karena tidak ada data target/label seperti pada supervised learning. maka saya akan menghitung metrics evaluasinya secara manual dengan rumus sebagai berikut.
+
+![formulaprecision](https://github.com/SangtuYoga/ML-T/blob/main/ML-T%202/precision.png?raw=true)
+
+Maka dari rekomendasi pada model cosine similarity terdapat 10/10 anime yang direkomendasikan yang memiliki genre yang relevan dengan "One Piece" maka metrik evaluasinya adalah 10/10 = 1.0. Jadi Precision dari model cosine similarity adalah 1.0.
 
 Dapat disimpulkan bahwa dari pembuatan sistem rekomendasi dengan mengunakan Content-Based Recommendation system (Cosine Similatiry) dan Collaborative Filtering(Deep Learning) yakni mendapatkan hasil yang sesuai seperti yang saya harapkan, yaitu dapat merekomendasikan anime berdasarkan genre yang sejenis dengan kesamaan yang cukup tinggi dan dapat merekomendasikan anime terhadap sebuah user dengan prediksi yang cukup baik.
